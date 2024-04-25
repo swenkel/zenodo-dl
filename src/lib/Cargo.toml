@@ -1,0 +1,26 @@
+[package]
+name = "zenodo_dl_core"
+version = "1.0.0"
+edition = "2021"
+authors = ["Simon Wenkel"]
+license = "MIT"
+description = "A simple library to download all files from a Zenodo record to a designated target folder."
+homepage = "https://github.com/swenkel/zenodo-dl"
+repository = "https://github.com/swenkel/zenodo-dl"
+documentation = "https://github.com/swenkel/zenodo-dl"
+keywords = ["zenodo"]
+categories = ["download-tool"]
+
+[lib]
+path = "lib.rs"
+
+
+[dependencies]
+reqwest = { version = "*" , features = ["default", "brotli", "gzip", "zstd", "json", "stream"]}
+tokio = { version = "1", features = ["full"] }
+indicatif = { version = "*" }
+futures = { version = "*" }
+serde_json = { version = "1.0" }
+serde = { version = "*", features = ["derive"]  }
+md-5 = { version = "*" }
+futures-util = { version = "*" }

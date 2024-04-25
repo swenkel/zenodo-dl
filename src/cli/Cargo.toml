@@ -1,0 +1,22 @@
+[package]
+name = "zenodo_dl"
+version = "1.0.0"
+edition = "2021"
+authors = ["Simon Wenkel"]
+license = "MIT"
+description = "A simple CLI to download all files from a Zenodo record to a designated target folder."
+homepage = "https://github.com/swenkel/zenodo-dl"
+repository = "https://github.com/swenkel/zenodo-dl"
+documentation = "https://github.com/swenkel/zenodo-dl"
+keywords = ["zenodo"]
+categories = ["command-line-utilities", "download-tool"]
+
+
+[[bin]]
+name = "zenodo_dl"
+path = "zenodo_dl.rs"
+
+[dependencies]
+tokio = { version = "1", features = ["full"] }
+clap = { version = "^4.5", features = ["derive"] }
+zenodo_dl_core = { version = "*", path = "../lib" }
